@@ -8,8 +8,6 @@
     typeof define === 'function' && define.amd ? define(factory) :
     (global = global || self, global.html2canvas = factory());
 }(this, function() {
-
-
   'use strict';
 
   /*! *****************************************************************************
@@ -688,7 +686,7 @@
         (next === NU || ([OP, HY].indexOf(next) !== -1 && classTypes[afterIndex + 1] === NU))) ||
       // ( OP | HY ) × NU
       ([OP, HY].indexOf(current) !== -1 && next === NU) ||
-      // NU ×   (NU | SY | IS)
+      // NU × (NU | SY | IS)
       (current === NU && [NU, SY, IS].indexOf(next) !== -1)) {
       return BREAK_NOT_ALLOWED;
     }
@@ -2566,7 +2564,7 @@
                 img.onerror = reject;
                 //ios safari 10.3 taints canvas with data urls unless crossOrigin is set to anonymous
                 if (isInlineBase64Image(src) || useCORS) {
-                  // img.crossOrigin = 'anonymous';
+                  //img.crossOrigin = 'anonymous';
                   img.crossOrigin = '';
                 }
                 // img.src = src;

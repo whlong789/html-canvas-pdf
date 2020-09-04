@@ -154,7 +154,7 @@
             <div class="resume-pic">
                 <h3>我制作的手工杯子</h3>
                 <div>
-                    <img src="images/pic.png" />
+                    <img src="https://images.tzrl.com/File/20200826111856283.jpg" />
                 </div>
                 <h3>我制作的手工杯子</h3>
                 <div>
@@ -172,7 +172,7 @@
         // IMG
         html2canvas(document.querySelector("#html-canvas")).then(canvas => {
             document.body.appendChild(canvas);
-            $("#html-canvas").css({ display: 'none' });
+            // $("#html-canvas").css({ display: 'none' });
             var image = document.createElement("img");
             image.src = canvas.toDataURL("image/png");
             document.getElementById("canvasImg").appendChild(image)
