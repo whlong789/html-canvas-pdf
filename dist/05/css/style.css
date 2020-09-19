@@ -18,21 +18,11 @@ hr{
   border:none;
   border-top:1px solid #bfbfbf;
 }
-h1{
-  font-size:2em;
-  font-weight:normal;
-}
-h2{
-  font-size:1.75em;
-  font-weight:normal;
-}
-h3{
-  margin-bottom:0.25em;
-  font-size:1em;
-  font-weight:400;
-}
+h1,
+h2,
+h3,
 h4{
-  font-size:0.875em;
+  font-weight:normal;
 }
 img{
   max-width:100%;
@@ -58,7 +48,7 @@ hr{
   margin-top:0;
 }
 .title h1{
-  font-size:1.375em;
+  font-size:1.4375em;
   font-weight:400;
   color:#030303;
   font-weight:bold;
@@ -70,44 +60,56 @@ hr{
   margin-bottom:2em;
   padding-left:1.375em;
 }
-.resume-list span{
-  font-size:1em;
-  color:#898989;
+.resume-list + .resume-list{
+  margin-top:1.5em;
 }
-.resume-list span.time{
-  font-size:0.875em;
-}
-.resume-list h3{
-  margin-bottom:0;
-  font-size:1em;
-}
-.resume-list h3.grey{
-  color:#898989;
-}
-.resume-list h3 + p{
+.resume-list p{
   display:-webkit-box;
   display:-webkit-flex;
   display:flex;
-  -webkit-box-align:center;
-  -webkit-align-items:center;
-          align-items:center;
-  -webkit-box-pack:justify;
-  -webkit-justify-content:space-between;
-          justify-content:space-between;
-  margin-top:1em;
+  -webkit-box-align:start;
+  -webkit-align-items:flex-start;
+          align-items:flex-start;
+}
+.resume-list p span:first-child{
+  -webkit-box-flex:1;
+  -webkit-flex:1;
+          flex:1;
+}
+.resume-list span{
+  color:#898989;
+  line-height:2;
+  font-size:1.125em;
+}
+.resume-list span.time{
+  padding:0 2em;
+  font-size:1em !important;
+}
+.resume-list h3{
+  margin-bottom:0;
+  font-size:1.25em;
+}
+.resume-list h3 + p{
+  margin-top:0.5em;
 }
 .resume-list.flex{
   display:-webkit-box;
   display:-webkit-flex;
   display:flex;
-  -webkit-box-align:center;
-  -webkit-align-items:center;
-          align-items:center;
+  -webkit-box-align:start;
+  -webkit-align-items:flex-start;
+          align-items:flex-start;
   -webkit-box-pack:justify;
   -webkit-justify-content:space-between;
           justify-content:space-between;
   margin-bottom:1.5em;
   line-height:1.5;
+}
+.resume-list.flex h3{
+  -webkit-box-flex:1;
+  -webkit-flex:1;
+          flex:1;
+  line-height:2;
 }
 .resume-list ul{
   clear:both;
@@ -118,7 +120,7 @@ hr{
   float:left;
   margin:0 0 1.5em;
   line-height:3;
-  font-size:1em;
+  font-size:1.125em;
   width:100%;
   color:#898989;
 }
@@ -127,35 +129,6 @@ hr{
 }
 .resume-list.flex-50 li{
   width:50%;
-}
-.resume-info{
-  position:relative;
-}
-.resume-info h4{
-  position:relative;
-  margin-top:4em;
-  margin-bottom:1.5em;
-  font-size:1.375em;
-  font-weight:bold;
-}
-.resume-info h4:first-child{
-  margin-top:0;
-}
-.resume-info h4 small{
-  margin-left:0.5em;
-}
-.resume-info ul li{
-  padding:0.5em 0 0.5em 1.625em;
-  font-size:1em;
-  line-height:2.5;
-  color:#898989;
-}
-.resume-info p{
-  padding-left:1.625em;
-  font-size:1em;
-  line-height:2.5;
-  color:#898989;
-  text-align:justify;
 }
 .resume-pic{
   padding-left:1.375em;
@@ -166,8 +139,37 @@ hr{
 }
 .resume-pic h3{
   margin-bottom:1em;
-  font-size:1em;
+  font-size:1.25em;
   color:#898989;
+}
+.resume-info{
+  position:relative;
+}
+.resume-info h4{
+  position:relative;
+  margin-top:4em;
+  margin-bottom:1.5em;
+  font-size:1.4375em;
+  font-weight:bold;
+}
+.resume-info h4:first-child{
+  margin-top:0;
+}
+.resume-info h4 small{
+  margin-left:0.5em;
+}
+.resume-info ul li{
+  padding:0.5em 0 0.5em 1.625em;
+  font-size:1.125em;
+  line-height:2.5;
+  color:#898989;
+}
+.resume-info p{
+  padding-left:1.625em;
+  font-size:1.125em;
+  line-height:2.5;
+  color:#898989;
+  text-align:justify;
 }
 .resume-header h1{
   font-size:3em;
@@ -221,7 +223,7 @@ hr{
   color:#4bb282;
 }
 .resume-header p{
-  font-size:1.125em;
+  font-size:1.25em;
 }
 .b-line{
   position:relative;

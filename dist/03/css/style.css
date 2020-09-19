@@ -18,21 +18,11 @@ hr{
   border:none;
   border-top:1px solid #bfbfbf;
 }
-h1{
-  font-size:2em;
-  font-weight:normal;
-}
-h2{
-  font-size:1.75em;
-  font-weight:normal;
-}
-h3{
-  margin-bottom:0.25em;
-  font-size:1em;
-  font-weight:400;
-}
+h1,
+h2,
+h3,
 h4{
-  font-size:0.875em;
+  font-weight:normal;
 }
 img{
   max-width:100%;
@@ -85,62 +75,81 @@ hr{
 }
 .title{
   position:relative;
-  margin-bottom:1em;
+  margin-top:4em;
+  margin-bottom:1.5em;
+}
+.title:first-child{
+  margin-top:0;
 }
 .title .icon{
   position:absolute;
-  top:2px;
-  left:-34px;
+  top:4px;
+  left:-1.5em;
   display:block;
-  font-size:24px;
+  font-size:1.875em;
   color:#ffd205;
 }
 .title h1{
-  font-size:1.25em;
-  font-weight:400;
+  font-size:1.5625em;
+  font-weight:bold;
   color:#030303;
 }
 .title h1 small{
   margin-left:0.5em;
-  font-size:0.75em;
 }
 .resume-list{
-  margin-bottom:1em;
+  margin-bottom:1.5em;
 }
-.resume-list span{
-  font-size:0.875em;
-  color:#707070;
+.resume-list + .resume-list{
+  margin-top:1.5em;
 }
-.resume-list span.time{
-  font-size:0.625em;
-}
-.resume-list h3{
-  margin-bottom:0;
-}
-.resume-list h3 + p{
+.resume-list p{
   display:-webkit-box;
   display:-webkit-flex;
   display:flex;
-  -webkit-box-align:center;
-  -webkit-align-items:center;
-          align-items:center;
-  -webkit-box-pack:justify;
-  -webkit-justify-content:space-between;
-          justify-content:space-between;
-  margin-top:0.25em;
+  -webkit-box-align:start;
+  -webkit-align-items:flex-start;
+          align-items:flex-start;
+}
+.resume-list p span:first-child{
+  -webkit-box-flex:1;
+  -webkit-flex:1;
+          flex:1;
+}
+.resume-list span{
+  color:#707070;
+  line-height:2;
+  font-size:1.125em;
+}
+.resume-list span.time{
+  padding-left:2em;
+  font-size:1em !important;
+}
+.resume-list h3{
+  margin-bottom:0;
+  font-size:1.25em;
+}
+.resume-list h3 + p{
+  margin-top:0.5em;
 }
 .resume-list.flex{
   display:-webkit-box;
   display:-webkit-flex;
   display:flex;
-  -webkit-box-align:center;
-  -webkit-align-items:center;
-          align-items:center;
+  -webkit-box-align:start;
+  -webkit-align-items:flex-start;
+          align-items:flex-start;
   -webkit-box-pack:justify;
   -webkit-justify-content:space-between;
           justify-content:space-between;
-  margin-bottom:1em;
-  line-height:1;
+  margin-bottom:1.5em;
+  line-height:1.5;
+}
+.resume-list.flex h3{
+  -webkit-box-flex:1;
+  -webkit-flex:1;
+          flex:1;
+  line-height:2;
 }
 .resume-list ul{
   clear:both;
@@ -149,42 +158,71 @@ hr{
 }
 .resume-list ul li{
   float:left;
-  margin:0 0 1em;
-  font-size:1em;
+  margin:0 0 1.5em;
+  font-size:1.125em;
   width:100%;
 }
 .resume-list.flex-50 li{
   width:50%;
 }
+.resume-pic{
+  overflow:hidden;
+}
+.resume-pic div{
+  margin-bottom:2em;
+}
+.resume-pic h3{
+  margin-bottom:1em;
+  font-size:1.25em;
+}
+.resume-header{
+  position:relative;
+  padding:5em 5em 9em;
+}
+.resume-header h1{
+  font-size:3.375em;
+  font-weight:700;
+  font-family:-apple-system-font, "Helvetica Neue", sans-serif;
+}
+.resume-header p{
+  font-size:2.25em;
+}
+.resume-header .mark{
+  position:absolute;
+  top:0;
+  right:6em;
+}
 .resume-info{
   position:relative;
-  padding:10em 4rem 4em;
+  padding:12em 4rem 4em;
   background-color:#ececec;
 }
 .resume-info .avatar{
   position:absolute;
-  top:-3em;
+  top:-4em;
   left:50%;
   display:block;
-  width:10em;
-  height:10em;
+  width:12.5em;
+  height:12.5em;
   border-radius:50%;
   -webkit-transform:translateX(-50%);
           transform:translateX(-50%);
 }
 .resume-info h1{
   color:#000;
+  font-size:2.875em;
+  font-weight:bold;
 }
 .resume-info h3{
-  font-size:1.25em;
+  font-size:2.25em;
 }
 .resume-info h4{
   position:relative;
-  margin-top:2.5em;
-  margin-bottom:2em;
+  margin-top:4em;
+  margin-bottom:1.5em;
   color:#000;
-  font-size:1em;
-  font-weight:normal;
+  font-size:1.5625em;
+  font-weight:bold;
 }
 .resume-info h4:after{
   content:'';
@@ -203,17 +241,12 @@ hr{
   color:#1b1b1b;
 }
 .resume-info ul li{
-  padding:0.25em 0;
-  font-size:0.625em;
+  padding:0.5em 0;
+  font-size:1.125em;
   line-height:2;
 }
 .resume-info p{
-  font-size:0.625em;
+  font-size:1.125em;
   line-height:2;
-}
-.resume-pic{
-  overflow:hidden;
-}
-.resume-pic div{
-  margin-bottom:1em;
+  text-align:justify;
 }
