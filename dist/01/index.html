@@ -10,11 +10,15 @@
 </head>
 
 <body>
-    <div style="position: fixed; right: 0; bottom: 0; left: 0; z-index: 12;display: flex;">
+    <!-- <div style="position: fixed; right: 0; bottom: 0; left: 0; z-index: 12;display: flex;">
         <a id="pdfBtn" class="resume-link" href="javascript:;" style="background-color: #313131;">生成PDF</a>
-    </div>
-    <div id="html-canvas" style="display: flex; margin: 0 auto; padding: 0 20px 100px; width: 980px;">
-        <div style="padding-top: 200px; flex: 0 0 240px; background-color:#0d0d0d;">
+    </div> -->
+    <div id="html-canvas" class="bg" style="min-width: 1240px; width: 100%;">
+        <div class="resume-header">
+            <h1>PERSONAL RESUME</h1>
+            <h2>个人简历</h2>
+        </div>
+        <div style="flex-basis: 21.5em; margin-left: 8em;">
             <img class="avatar" src="images/pic.png" />
             <div class="resume-info">
                 <h1><strong>王海涛</strong></h1>
@@ -39,12 +43,7 @@
                 </p>
             </div>
         </div>
-        <div style="margin-left: 60px; padding-top: 40px; flex: 1">
-
-            <div class="resume-header">
-                <h1>PERSONAL RESUME</h1>
-                <h2>个人简历</h2>
-            </div>
+        <div style="margin-left: 6em; flex: 1">
             <!-- 工作经历 -->
             <div class="title">
                 <i class="icon icon-s1"></i>
@@ -113,9 +112,9 @@
             </div>
             <div class="resume-list flex-50">
                 <ul>
-                    <li><strong>Final Cut Pro / 精通</strong></li>
-                    <li><strong>CoreDraw / 精通</strong></li>
-                    <li><strong>Final Cut Pro / 精通</strong></li>
+                    <li>Final Cut Pro / 精通</li>
+                    <li>CoreDraw / 精通</li>
+                    <li>Final Cut Pro / 精通</li>
                 </ul>
             </div>
             <hr />
@@ -126,9 +125,9 @@
             </div>
             <div class="resume-list">
                 <ul>
-                    <li><strong>西班牙语 / 熟练 / 专业西班牙语四级</strong></li>
-                    <li><strong>英语 / 熟练 / 大学英语四级</strong></li>
-                    <li><strong>日语 / 入门 / 大学日语四级</strong></li>
+                    <li>西班牙语 / 熟练 / 专业西班牙语四级</li>
+                    <li>英语 / 熟练 / 大学英语四级</li>
+                    <li>日语 / 入门 / 大学日语四级</li>
                 </ul>
             </div>
             <hr />
@@ -181,58 +180,60 @@
         // });
         // PDF
         $("#pdfBtn").click(function () {
+            var html = document.getElementById("html-canvas");
+            var contentWidth = html.offsetWidth; //获取dom 宽度
+            var contentHeight = html.offsetHeight; //获取dom 高度
+            var canvas = document.createElement('canvas');
 
-            setTimeout(() => {
-                let html = document.getElementById("html-canvas");
-                let contentWidth = html.offsetWidth; //获取dom 宽度
-                let contentHeight = html.offsetHeight; //获取dom 高度
-                let canvas = document.createElement('canvas');
+            var scale = 2; //定义任意放大倍数 支持小数
+            canvas.width = contentWidth * scale; //定义canvas 宽度 * 缩放
+            canvas.height = contentHeight * scale; //定义canvas高度 *缩放
+            canvas.getContext('2d').scale(1, 1);
 
-                let scale = 1; //定义任意放大倍数 支持小数
-                canvas.width = contentWidth * scale; //定义canvas 宽度 * 缩放
-                canvas.height = contentHeight * scale; //定义canvas高度 *缩放
-                canvas.getContext('2d').scale(scale, scale);
+            var opts = {
+                scale: scale,
+                canvas: canvas,
+                width: contentWidth,
+                height: contentHeight,
+                useCORS: true
+            };
 
-                let opts = {
-                    scale: scale,
-                    canvas: canvas,
-                    width: contentWidth,
-                    height: contentHeight,
-                    useCORS: true
-                };
+            html2canvas(html, opts).then(function (canvas) {
+                var pageData = canvas.toDataURL('image/JPEG', 1.0) // 清晰度 0 - 1
 
-                html2canvas(html, opts).then(function (canvas) {
-                    let pageData = canvas.toDataURL('image/JPEG', 1.0) // 清晰度 0 - 1
-                    let pdf;
-                    //一页 pdf 显示 html 页面生成的 canvas高度
-                    let pageHeight = (contentWidth / 552.28) * 841.89;
-                    //未生成 pdf 的 html页面高度
-                    let leftHeight = contentHeight;
-                    //页面偏移
-                    let position = 0;
-                    // a4纸的尺寸[595.28,841.89]，html 页面生成的 canvas 在pdf中图片的宽高
-                    let imgWidth = 555.28;
-                    let imgHeight = (imgWidth / contentWidth) * contentHeight;
 
-                    pdf = new jsPDF('', 'pt', 'a4'); // 下载尺寸 a4 纸 比例
-                    //有两个高度需要区分，一个是html页面的实际高度，和生成pdf的页面高度(841.89)
-                    //当内容未超过pdf一页显示的范围，无需分页
-                    if (leftHeight < pageHeight) {
-                        pdf.addImage(pageData, 'JPEG', 20, 0, imgWidth, imgHeight)
-                    } else {
-                        while (leftHeight > 0) {
-                            pdf.addImage(pageData, 'JPEG', 20, position, imgWidth, imgHeight)
-                            leftHeight -= pageHeight
-                            position -= 841.89
-                            //避免添加空白页
-                            if (leftHeight > 0) {
-                                pdf.addPage()
-                            }
+                //一页pdf显示html页面生成的canvas高度;
+                var pageHeight = contentWidth / 592.28 * 841.89;
+                //未生成pdf的html页面高度
+                var leftHeight = contentHeight;
+                //页面偏移
+                var position = 0;
+                //a4纸的尺寸[595.28,841.89]，html页面生成的canvas在pdf中图片的宽高
+                var imgWidth = 595.28;
+                var imgHeight = 592.28 / contentWidth * contentHeight;
+
+                var pdf = new jsPDF('', 'pt', 'a4');
+
+                //有两个高度需要区分，一个是html页面的实际高度，和生成pdf的页面高度(841.89)
+                //当内容未超过pdf一页显示的范围，无需分页
+                if (leftHeight < pageHeight) {
+                    pdf.addImage(pageData, 'JPEG', 0, 0, imgWidth, imgHeight);
+                } else {
+                    while (leftHeight > 0) {
+                        pdf.addImage(pageData, 'JPEG', 0, position, imgWidth, imgHeight)
+                        leftHeight -= pageHeight;
+                        position -= 841.89;
+                        //避免添加空白页
+                        if (leftHeight > 0) {
+                            pdf.addPage();
                         }
                     }
-                    pdf.save('Test.pdf');
-                })
-            }, 500);
+                }
+
+                pdf.save("content.pdf");
+
+            })
+
         })
     </script>
 </body>

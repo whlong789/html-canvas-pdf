@@ -85,38 +85,44 @@ hr{
 }
 .title{
   position:relative;
-  margin-bottom:1em;
-  padding-bottom:1em;
+  margin-top:4em;
+  margin-bottom:1.5em;
+  padding-bottom:1.5em;
   border-bottom:1px dotted #000;
+}
+.title:first-child{
+  margin-bottom:0;
 }
 .title .icon{
   position:absolute;
   top:2px;
-  left:-34px;
+  left:0;
   display:block;
-  font-size:24px;
+  font-size:1.75em;
 }
 .title h1{
-  font-size:1.25em;
+  padding-left:2em;
+  font-size:1.375em;
   font-weight:400;
   color:#030303;
+  font-weight:bold;
 }
 .title h1 small{
   margin-left:0.5em;
-  font-size:0.75em;
 }
 .resume-list{
   margin-bottom:1em;
 }
 .resume-list span{
-  font-size:0.875em;
+  font-size:1.0625em;
   color:#707070;
 }
 .resume-list span.time{
-  font-size:0.625em;
+  font-size:0.875em;
 }
 .resume-list h3{
   margin-bottom:0;
+  font-size:1.125em;
 }
 .resume-list h3 + p{
   display:-webkit-box;
@@ -128,7 +134,7 @@ hr{
   -webkit-box-pack:justify;
   -webkit-justify-content:space-between;
           justify-content:space-between;
-  margin-top:0.25em;
+  margin-top:0.5em;
 }
 .resume-list.flex{
   display:-webkit-box;
@@ -140,8 +146,8 @@ hr{
   -webkit-box-pack:justify;
   -webkit-justify-content:space-between;
           justify-content:space-between;
-  margin-bottom:1em;
-  line-height:1;
+  margin-bottom:1.5em;
+  line-height:1.5;
 }
 .resume-list ul{
   clear:both;
@@ -150,8 +156,8 @@ hr{
 }
 .resume-list ul li{
   float:left;
-  margin:0 0 1em;
-  font-size:1em;
+  margin:0 0 1.5em;
+  font-size:1.0625em;
   width:100%;
 }
 .resume-list.flex-50 li{
@@ -163,8 +169,7 @@ hr{
 }
 .resume-info .resume-info__hd{
   position:relative;
-  padding-top:4em;
-  padding-bottom:1em;
+  padding:6em 0 2em;
   background-color:#91e0e5;
   text-align:center;
 }
@@ -174,55 +179,60 @@ hr{
   left:0;
   bottom:-4em;
   border:4em solid;
-  border-width:4em 18.75em 0 0;
+  border-width:4em 24em 0 0;
   border-color:#91e0e5 transparent transparent;
 }
 .resume-info .resume-info__bd{
-  padding:4em 2em 4em;
+  padding:5.5em 3em;
 }
 .resume-info .avatar{
   margin:0 auto 2em;
-  padding:0.25em;
-  width:9.35em;
-  height:9.35em;
+  padding:0.35em;
+  width:12em;
+  height:12em;
   border-radius:50%;
   background-color:#fff;
 }
 .resume-info h1{
   color:#234067;
+  font-size:2.75em;
+  font-weight:bold;
   text-align:center;
 }
 .resume-info h3{
   color:#234067;
-  font-size:1.25em;
+  font-size:1.875em;
   text-align:center;
 }
 .resume-info h4{
   position:relative;
-  margin-top:2.5em;
-  margin-bottom:1em;
+  margin-top:4em;
+  margin-bottom:1.5em;
   color:#fff;
-  font-size:1.125em;
-  font-weight:normal;
+  font-size:1.375em;
 }
 .resume-info h4 small{
   margin-left:0.5em;
   color:#fff;
 }
 .resume-info ul li{
-  padding:0.25em 0;
-  font-size:0.625em;
+  padding:0.5em 0;
+  font-size:1em;
   line-height:2;
 }
 .resume-info p{
-  font-size:0.625em;
+  font-size:1em;
   line-height:2;
 }
 .resume-pic{
   overflow:hidden;
 }
 .resume-pic div{
+  margin-bottom:2em;
+}
+.resume-pic h3{
   margin-bottom:1em;
+  font-size:1.125em;
 }
 .lbg{
   position:relative;
@@ -234,6 +244,6 @@ hr{
   left:0;
   bottom:0;
   z-index:-1;
-  width:18.75em;
+  width:24em;
   background-color:#234067;
 }

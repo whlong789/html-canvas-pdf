@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    padding: 0;
+
+    li {
+        list-style: none;
+    }
+}
+
+hr {
+    margin: 1.5em 0;
+    border: none;
+    border-top: 1px solid #bfbfbf;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 1.75em;
+    font-weight: normal
+}
+
+h3 {
+    margin-bottom: 0.25em;
+    font-size: 1em;
+    font-weight: 400
+}
+
+h4 {
+    font-size: 0.875em;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+hr {
+    border-top: none
+}
+
+@font-face {
+    font-family: 'helvetica_neuebold';
+    src: url('../fonts/helveticaneue-bold-webfont.eot');
+    src: url('../fonts/helveticaneue-bold-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/helveticaneue-bold-webfont.woff') format('woff'),
+        url('../fonts/helveticaneue-bold-webfont.ttf') format('truetype'),
+        url('../fonts/helveticaneue-bold-webfont.svg#helvetica_neuebold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font10: 0.875em;//15
+@font11: 1em;//16
+@font12: 1.0625em;//17
+@font13: 1.125em;//18
+@font15: 1.25em;//20
+@font17: 1.375em;
+
+.title {
+    position: relative;
+    margin-bottom: 1.5em;
+
+    h1 {
+        font-size: @font17;
+        font-weight: 400;
+        color: #030303;
+
+        small {
+            margin-left: 0.5em;
+        }
+    }
+}
+
+.resume-list {
+    margin-bottom: 1.5em;
+
+    span {
+        font-size: @font12;
+        color: #898989;
+
+        &.time {
+            font-size: @font10;
+        }
+    }
+
+    h3 {
+        margin-bottom: 0;
+        font-size: @font12;
+
+        &.grey {
+            color: #898989;
+        }
+
+        &+p {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: .5em;
+        }
+    }
+
+    &.flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.5em;
+        line-height: 1.5;
+    }
+
+    ul {
+        clear: both;
+        zoom: 1;
+        overflow: hidden;
+
+        li {
+            float: left;
+            margin: 0 0 1.5em;
+            font-size: @font12;
+            width: 100%;
+            color: #898989;
+
+            &:before, &:after {
+                display: none;
+            }
+        }
+    }
+
+    &.flex-50 {
+        li {
+            width: 50%;
+            
+        }
+    }
+}
+
+.resume-info {
+
+    .avatar {
+        position: absolute;
+        top: -13.5em;
+        left: -10em;
+        width: 20em;
+        height: 20em;
+        border-radius: 50%;
+        border: .5em solid #fff;
+    }
+
+    h2 {
+        font-size: 3.125em;
+        font-weight: bold;
+    }
+
+    h3 {
+        margin-top: .5em;
+        font-size:2em;
+    }
+
+    h4 {
+        position: relative;
+        margin-top: 4em;
+        margin-bottom: 1.5em;
+        font-size: @font17;
+        font-weight: normal;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        small {
+            margin-left: 0.5em;
+        }
+    }
+
+    ul {
+        li {
+            padding: .25em 0;
+            font-size: @font12;
+            line-height: 2;
+            color: #898989;
+        }
+    }
+
+    p {
+        font-size: @font12;
+        line-height: 2;
+        color: #898989;
+        text-align: justify;
+    }
+}
+
+.resume-pic {
+    overflow: hidden;
+
+    div {
+        margin-bottom: 2em;
+    }
+
+    h3 {
+        margin-bottom: 1em;
+        font-size: @font12;
+        color: #898989;
+    }
+
+}
+
+.resume-header {
+    position: relative;
+    padding: 6em 0 4em 40%;
+    // background: linear-gradient(to right bottom, rgba(234, 201, 201, 0.6) 50%, #f2dade 50%);
+    
+    &:before {
+        content: "";
+        position: absolute;
+        top: -10%;
+        left: 0;
+        width: 95%;
+        height: 140%;
+        z-index: 0;
+        transform: skewY(8deg);
+        background: linear-gradient(to bottom right, rgba(234, 201, 201, 0.75) 50%, transparent 50%);
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: -15%;
+        right: 0;
+        width: 40%;
+        height: 60%;
+        z-index: 1;
+        transform: skewY(10deg);
+        background: linear-gradient(to top left, rgba(234, 201, 201, 0.45) 50%, transparent 50%);
+    }
+
+    h1 {
+        font-size: 3.75em;
+        font-weight: bold;
+        font-family: 'helvetica_neuebold';
+    }
+    p {
+        font-size: 2.125em;
+    }
+}
+
+.line {
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: .75em;
+        bottom: 0;
+        left: -3em;
+        border-left: 2px solid #ddd;
+    }
+
+    li {
+        position: relative;
+
+        &:last-child:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -3em;
+            border-left: 2px solid #fff;
+        }
+
+        &:last-child:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -3em;
+            height: .75em;
+            border-left: 2px solid #ddd;
+        }
+        &:first-child {
+            .title {
+                margin-top: 0;
+            }
+        }
+        .title{
+            margin-top: 4em;
+            &:before {
+                content: '';
+                position: absolute;
+                top: .5em;
+                left: -3.325em;
+                z-index: 11;
+                width: .75em;
+                height: .75em;
+                background-color: #f2dade;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+.mask {
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 8em;
+        left: -14em;
+        height: 8em;
+        z-index: 0;
+        transform-origin: right top;
+        background: linear-gradient(to right top, rgba(234, 201, 201, 0.2) 50%, transparent 50%);
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 18em;
+        left: -14em;
+        height: 6em;
+        z-index: 0;
+        transform-origin: right top;
+        background: linear-gradient(to right top, rgba(234, 201, 201, 0.2) 50%, transparent 50%);
+    }
+}
