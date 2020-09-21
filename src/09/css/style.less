@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    padding: 0;
+
+    li {
+        list-style: none;
+    }
+}
+
+hr {
+    margin: 1.5em 0;
+    border: none;
+    border-top: 1px solid #bfbfbf;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: normal;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+@font10: 1em;
+@font12: 1.125em;
+@font14: 1.25em;
+@font18: 1.4375em;
+
+/* time-line */
+.time-line {
+    ul {
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+        }
+
+        li {
+            
+        }
+    }
+}
