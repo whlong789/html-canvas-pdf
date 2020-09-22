@@ -181,6 +181,7 @@ hr{
 .resume-info{
   position:relative;
   color:#fff;
+  overflow:hidden;
 }
 .resume-info .resume-info__hd{
   position:relative;
@@ -188,17 +189,22 @@ hr{
   background-color:#91e0e5;
   text-align:center;
 }
-.resume-info .resume-info__hd:after{
-  content:'';
-  position:absolute;
-  left:0;
-  bottom:-4em;
-  border:4em solid;
-  border-width:4em 24em 0 0;
-  border-color:#91e0e5 transparent transparent;
-}
 .resume-info .resume-info__bd{
-  padding:5.5em 3em;
+  position:relative;
+  padding:0 3em 4em;
+  overflow:hidden;
+}
+.resume-info .resume-info__bd h4:first-child{
+  margin-top:2em;
+}
+.resume-info span.caret{
+  position:relative;
+  z-index:1;
+  display:block;
+  margin-top:-2px;
+  border:3em solid transparent;
+  border-width:3em 24em 3em 0;
+  border-color:#91e0e5 #234067 #234067;
 }
 .resume-info .avatar{
   margin:0 auto 2em;
@@ -239,17 +245,4 @@ hr{
   font-size:1.125em;
   line-height:2;
   text-align:justify;
-}
-.lbg{
-  position:relative;
-}
-.lbg:after{
-  content:'';
-  position:absolute;
-  top:0;
-  left:0;
-  bottom:0;
-  z-index:-1;
-  width:24em;
-  background-color:#234067;
 }

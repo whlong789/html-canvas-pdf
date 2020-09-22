@@ -217,6 +217,7 @@ hr {
 .resume-info {
     position: relative;
     color: #fff;
+    overflow: hidden;
 
     .resume-info__hd {
         position: relative;
@@ -224,19 +225,26 @@ hr {
         background-color: #91e0e5;
         text-align: center;
 
-        &:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -4em;
-            border: 4em solid;
-            border-width: 4em 24em 0 0;
-            border-color: #91e0e5 transparent transparent;
-        }
     }
 
     .resume-info__bd {
-        padding: 5.5em 3em;
+        position: relative;
+        padding: 0 3em 4em;
+        overflow: hidden;
+
+        h4:first-child {
+            margin-top: 2em;
+        }
+    }
+
+    span.caret {
+        position: relative;
+        z-index: 1;
+        display: block;
+        margin-top: -2px;
+        border: 3em solid transparent;
+        border-width: 3em 24em 3em 0;
+        border-color: #91e0e5 #234067 #234067;
     }
 
     .avatar {
@@ -286,20 +294,5 @@ hr {
         font-size: @font12;
         line-height: 2;
         text-align: justify;
-    }
-}
-
-.lbg {
-    position: relative;
-    
-    &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        z-index: -1;
-        width: 24em;
-        background-color: #234067;
     }
 }

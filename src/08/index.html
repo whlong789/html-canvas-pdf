@@ -10,7 +10,10 @@
 </head>
 
 <body>
-    <div style="position: relative; background-color: #cdcdcd; margin: 0 auto; min-width: 1240px; width: 1240px; overflow: hidden;">
+    <div style="position: fixed; right: 0; bottom: 0; left: 0; z-index: 12;display: flex;">
+            <a id="pdfBtn" class="resume-link" href="javascript:;" style="background-color: #313131;">生成PDF</a>
+        </div>
+    <div id="html-canvas" style="position: relative; background-color: #cdcdcd; margin: 0 auto; min-width: 1240px; width: 1240px; overflow: hidden;">
         <div class="bg" style="padding: 4em 0;">
             <div class="resume-header">
                 <div class="resume-header__hd">
@@ -189,6 +192,78 @@
             </div>
         </div>
     </div>
+    <div id="canvasImg"></div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jspdf.min.js"></script>
+    <script src="js/html2canvas.min.js"></script>
+    <script>
+        // IMG
+        html2canvas(document.querySelector("#html-canvas")).then(canvas => {
+            document.body.appendChild(canvas);
+            
+            // $("#html-canvas").css({ display: 'none' });
+            // var image = document.createElement("img");
+            // image.src = canvas.toDataURL("image/png");
+            // document.getElementById("canvasImg").appendChild(image)
+        });
+        // PDF
+        $("#pdfBtn").click(function () {
+            var html = document.getElementById("html-canvas");
+            var contentWidth = html.offsetWidth; //获取dom 宽度
+            var contentHeight = html.offsetHeight; //获取dom 高度
+            var canvas = document.createElement('canvas');
+
+            var scale = 2; //定义任意放大倍数 支持小数
+            canvas.width = contentWidth * scale; //定义canvas 宽度 * 缩放
+            canvas.height = contentHeight * scale; //定义canvas高度 *缩放
+            canvas.getContext('2d').scale(1, 1);
+
+            var opts = {
+                scale: scale,
+                canvas: canvas,
+                width: contentWidth,
+                height: contentHeight,
+                useCORS: true
+            };
+
+            html2canvas(html, opts).then(function (canvas) {
+                var pageData = canvas.toDataURL('image/JPEG', 1.0) // 清晰度 0 - 1
+
+
+                //一页pdf显示html页面生成的canvas高度;
+                var pageHeight = contentWidth / 592.28 * 841.89;
+                //未生成pdf的html页面高度
+                var leftHeight = contentHeight;
+                //页面偏移
+                var position = 0;
+                //a4纸的尺寸[595.28,841.89]，html页面生成的canvas在pdf中图片的宽高
+                var imgWidth = 595.28;
+                var imgHeight = 592.28 / contentWidth * contentHeight;
+
+                var pdf = new jsPDF('', 'pt', 'a4');
+
+                //有两个高度需要区分，一个是html页面的实际高度，和生成pdf的页面高度(841.89)
+                //当内容未超过pdf一页显示的范围，无需分页
+                if (leftHeight < pageHeight) {
+                    pdf.addImage(pageData, 'JPEG', 0, 0, imgWidth, imgHeight);
+                } else {
+                    while (leftHeight > 0) {
+                        pdf.addImage(pageData, 'JPEG', 0, position, imgWidth, imgHeight)
+                        leftHeight -= pageHeight;
+                        position -= 841.89;
+                        //避免添加空白页
+                        if (leftHeight > 0) {
+                            pdf.addPage();
+                        }
+                    }
+                }
+
+                pdf.save("content.pdf");
+
+            })
+
+        })
+    </script>
 </body>
 
 </html>
