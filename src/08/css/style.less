@@ -383,7 +383,6 @@ hr {
 .resume-header {
     display: flex;
     align-items: center;
-    padding: 2em 4em 4em;
 
     .resume-header__hd {
         display: flex;
@@ -439,16 +438,16 @@ hr {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    margin-right: .5em;
+                    margin-right: 0;
                     width: 1.85em;
                     height: 1.85em;
-                    border: 2px solid #fff;
+                    // border: 2px solid #fff;
                     font-size: 1.5em !important;
                     text-align: center;
-                    border-radius: 50%;
+                    // border-radius: 50%;
 
                     &.icon-s11,&.icon-s12 {
-                        font-size: 1.35rem !important;
+                        font-size: 1.5rem !important;
                     }
                 }
             }
@@ -460,8 +459,9 @@ hr {
 .bg {
     position: relative;
     z-index: 1;
+    padding: 6em 4em;
     background: url('../images/bg.png') no-repeat 50% 0;
-    background-size: contain;
+    background-size: 100%;
     overflow: hidden;
 
     // &:after {

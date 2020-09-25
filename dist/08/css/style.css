@@ -346,7 +346,6 @@ hr{
   -webkit-box-align:center;
   -webkit-align-items:center;
           align-items:center;
-  padding:2em 4em 4em;
 }
 .resume-header .resume-header__hd{
   display:-webkit-box;
@@ -419,22 +418,21 @@ hr{
   -webkit-box-pack:center;
   -webkit-justify-content:center;
           justify-content:center;
-  margin-right:0.5em;
+  margin-right:0;
   width:1.85em;
   height:1.85em;
-  border:2px solid #fff;
   font-size:1.5em !important;
   text-align:center;
-  border-radius:50%;
 }
 .resume-header .resume-header__bd p span i.icon-s11,
 .resume-header .resume-header__bd p span i.icon-s12{
-  font-size:1.35rem !important;
+  font-size:1.5rem !important;
 }
 .bg{
   position:relative;
   z-index:1;
+  padding:6em 4em;
   background:url('../images/bg.png') no-repeat 50% 0;
-  background-size:contain;
+  background-size:100%;
   overflow:hidden;
 }
