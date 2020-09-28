@@ -211,6 +211,7 @@ hr{
   -webkit-box-flex:1;
   -webkit-flex:1;
           flex:1;
+  word-break:break-all;
 }
 .resume-list span{
   color:#7d7d7d;
@@ -225,6 +226,7 @@ hr{
   line-height:2;
   font-size:1.125em;
   color:#7d7d7d;
+  word-break:break-all;
 }
 .resume-list h3.dark{
   color:#000;
@@ -265,6 +267,7 @@ hr{
   line-height:2;
   font-size:1.125em;
   color:#7d7d7d;
+  word-break:break-all;
 }
 .resume-list ul li:first-child{
   margin-top:0;
@@ -312,6 +315,13 @@ hr{
   border:0.35em solid #e13138;
   border-radius:50%;
 }
+.resume-list ul.flex li p{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:1;
+}
 .resume-info{
   position:relative;
 }
@@ -328,6 +338,7 @@ hr{
   font-size:1.125em;
   line-height:2;
   text-align:justify;
+  word-break:break-all;
 }
 .resume-info ul li{
   margin-top:0.75em;
@@ -335,6 +346,7 @@ hr{
   line-height:2;
   text-align:left;
   color:#7d7d7d;
+  word-break:break-all;
 }
 .resume-info ul li:first-child{
   margin-top:0;
@@ -426,7 +438,7 @@ hr{
 }
 .resume-header .resume-header__bd p span i.icon-s11,
 .resume-header .resume-header__bd p span i.icon-s12{
-  font-size:1.5rem !important;
+  font-size:2.15em !important;
 }
 .bg{
   position:relative;

@@ -143,6 +143,7 @@ hr {
 
             &:first-child {
                 flex: 1;
+                word-break: break-all;
             }
         }
     }
@@ -161,6 +162,7 @@ hr {
     h3 {
         margin-bottom: 0;
         font-size: @font14;
+        word-break: break-all;
 
         &+p {
             margin-top: 0.5em;
@@ -190,12 +192,19 @@ hr {
             margin: 0 0 1.5em;
             font-size: @font12;
             width: 100%;
+            word-break: break-all;
         }
     }
 
     &.flex-50 {
-        li {
-            width: 50%;
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+                padding-right: 10px;
+                flex: 0 0 50%;
+            }
         }
     }
 }
@@ -210,6 +219,7 @@ hr {
     h3 {
         margin-bottom: 1em;
         font-size: @font12;
+        word-break: break-all;
     }
 
 }
@@ -287,6 +297,7 @@ hr {
             padding: .5em 0;
             font-size: @font12;
             line-height: 2;
+            word-break: break-all;
         }
     }
 
@@ -294,5 +305,6 @@ hr {
         font-size: @font12;
         line-height: 2;
         text-align: justify;
+        word-break: break-all;
     }
 }

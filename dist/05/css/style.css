@@ -75,6 +75,7 @@ hr{
   -webkit-box-flex:1;
   -webkit-flex:1;
           flex:1;
+  word-break:break-all;
 }
 .resume-list span{
   color:#898989;
@@ -88,6 +89,7 @@ hr{
 .resume-list h3{
   margin-bottom:0;
   font-size:1.25em;
+  word-break:break-all;
 }
 .resume-list h3 + p{
   margin-top:0.5em;
@@ -123,12 +125,23 @@ hr{
   font-size:1.125em;
   width:100%;
   color:#898989;
+  word-break:break-all;
 }
 .resume-list ul li:last-child{
   margin-bottom:0;
 }
-.resume-list.flex-50 li{
-  width:50%;
+.resume-list.flex-50 ul{
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:flex;
+  -webkit-flex-wrap:wrap;
+          flex-wrap:wrap;
+}
+.resume-list.flex-50 ul li{
+  padding-right:10px;
+  -webkit-box-flex:0;
+  -webkit-flex:0 0 50%;
+          flex:0 0 50%;
 }
 .resume-pic{
   padding-left:1.375em;
@@ -141,6 +154,7 @@ hr{
   margin-bottom:1em;
   font-size:1.25em;
   color:#898989;
+  word-break:break-all;
 }
 .resume-info{
   position:relative;
@@ -163,6 +177,7 @@ hr{
   font-size:1.125em;
   line-height:2.5;
   color:#898989;
+  word-break:break-all;
 }
 .resume-info p{
   padding-left:1.625em;
@@ -170,6 +185,7 @@ hr{
   line-height:2.5;
   color:#898989;
   text-align:justify;
+  word-break:break-all;
 }
 .resume-header h1{
   font-size:3em;
@@ -184,18 +200,6 @@ hr{
   border-bottom:3px solid #000;
 }
 .resume-header .bd{
-  display:-webkit-box;
-  display:-webkit-flex;
-  display:flex;
-  -webkit-box-align:center;
-  -webkit-align-items:center;
-          align-items:center;
-  position:relative;
-  margin-top:3em;
-  padding-right:1em;
-}
-.resume-header .bd:after{
-  content:'';
   position:absolute;
   top:0;
   right:-5.5em;
@@ -224,16 +228,4 @@ hr{
 }
 .resume-header p{
   font-size:1.25em;
-}
-.b-line{
-  position:relative;
-  margin-bottom:4em;
-}
-.b-line:after{
-  content:'';
-  position:absolute;
-  right:0;
-  bottom:0;
-  left:5.5em;
-  border-bottom:0.5em solid #4bb282;
 }

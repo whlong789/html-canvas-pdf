@@ -118,6 +118,7 @@ hr{
   -webkit-box-flex:1;
   -webkit-flex:1;
           flex:1;
+  word-break:break-all;
 }
 .resume-list span{
   color:#707070;
@@ -131,6 +132,7 @@ hr{
 .resume-list h3{
   margin-bottom:0;
   font-size:1.25em;
+  word-break:break-all;
 }
 .resume-list h3 + p{
   margin-top:0.5em;
@@ -164,9 +166,20 @@ hr{
   margin:0 0 1.5em;
   font-size:1.125em;
   width:100%;
+  word-break:break-all;
 }
-.resume-list.flex-50 li{
-  width:50%;
+.resume-list.flex-50 ul{
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:flex;
+  -webkit-flex-wrap:wrap;
+          flex-wrap:wrap;
+}
+.resume-list.flex-50 ul li{
+  padding-right:10px;
+  -webkit-box-flex:0;
+  -webkit-flex:0 0 50%;
+          flex:0 0 50%;
 }
 .resume-pic{
   overflow:hidden;
@@ -177,6 +190,7 @@ hr{
 .resume-pic h3{
   margin-bottom:1em;
   font-size:1.125em;
+  word-break:break-all;
 }
 .resume-info{
   position:relative;
@@ -240,9 +254,11 @@ hr{
   padding:0.5em 0;
   font-size:1.125em;
   line-height:2;
+  word-break:break-all;
 }
 .resume-info p{
   font-size:1.125em;
   line-height:2;
   text-align:justify;
+  word-break:break-all;
 }
