@@ -323,11 +323,8 @@ img{
   text-align:justify;
 }
 .resume-content p{
+  height:288px;
   overflow:hidden;
-  text-overflow:ellipsis;
-  display:-webkit-box;
-  -webkit-box-orient:vertical;
-  -webkit-line-clamp:8;
 }
 .resume-pic ul{
   display:-webkit-box;
