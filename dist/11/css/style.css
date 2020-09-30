@@ -316,6 +316,7 @@ img{
   text-overflow:ellipsis;
 }
 .resume-content{
+  padding-top:10px;
   word-break:break-all;
   line-height:2;
   color:#fff;

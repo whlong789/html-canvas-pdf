@@ -79,7 +79,7 @@ hr{
 }
 .resume-list span{
   color:#898989;
-  line-height:2;
+  line-height:2.1;
   font-size:1.125em;
 }
 .resume-list span.time{
@@ -121,7 +121,7 @@ hr{
 .resume-list ul li{
   float:left;
   margin:0 0 1.5em;
-  line-height:3;
+  line-height:2.5;
   font-size:1.125em;
   width:100%;
   color:#898989;
@@ -182,7 +182,7 @@ hr{
 .resume-info p{
   padding-left:1.625em;
   font-size:1.125em;
-  line-height:2.5;
+  line-height:1.95;
   color:#898989;
   text-align:justify;
   word-break:break-all;

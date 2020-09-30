@@ -11,9 +11,10 @@
 
 <body>
     <div style="position: fixed; right: 0; bottom: 0; left: 0; z-index: 12;display: flex;">
-            <a id="pdfBtn" class="resume-link" href="javascript:;" style="background-color: #313131;">生成PDF</a>
-        </div>
-    <div id="html-canvas" style="position: relative; background-color: #cdcdcd; margin: 0 auto; min-width: 1240px; width: 1240px; overflow: hidden;">
+        <a id="pdfBtn" class="resume-link" href="javascript:;" style="background-color: #313131;">生成PDF</a>
+    </div>
+    <div id="html-canvas"
+        style="position: relative; background-color: #cdcdcd; margin: 0 auto; min-width: 1240px; width: 1240px; overflow: hidden;">
         <div class="bg">
             <div class="resume-header">
                 <div class="resume-header__hd">
@@ -192,7 +193,7 @@
             </div>
         </div>
     </div>
-    <div id="canvasImg"></div>
+    <!-- <div id="canvasImg"></div> -->
     <script src="js/jquery.min.js"></script>
     <script src="js/jspdf.min.js"></script>
     <script src="js/html2canvas.min.js"></script>
@@ -200,7 +201,7 @@
         // IMG
         html2canvas(document.querySelector("#html-canvas")).then(canvas => {
             document.body.appendChild(canvas);
-            
+
             // $("#html-canvas").css({ display: 'none' });
             // var image = document.createElement("img");
             // image.src = canvas.toDataURL("image/png");
@@ -213,10 +214,10 @@
             var contentHeight = html.offsetHeight; //获取dom 高度
             var canvas = document.createElement('canvas');
 
-            var scale = 2; //定义任意放大倍数 支持小数
+            var scale = 1; //定义任意放大倍数 支持小数
             canvas.width = contentWidth * scale; //定义canvas 宽度 * 缩放
             canvas.height = contentHeight * scale; //定义canvas高度 *缩放
-            canvas.getContext('2d').scale(1, 1);
+            canvas.getContext('2d').scale(scale, scale);
 
             var opts = {
                 scale: scale,

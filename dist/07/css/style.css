@@ -206,7 +206,7 @@ hr{
 }
 .resume-list span{
   color:#707070;
-  line-height:2;
+  line-height:2.2;
   font-size:1.125em;
 }
 .resume-list span.time{
@@ -287,7 +287,7 @@ hr{
 }
 .resume-info p{
   font-size:1.125em;
-  line-height:2;
+  line-height:2.1;
   text-align:justify;
   word-break:break-all;
 }
