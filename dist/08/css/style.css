@@ -316,11 +316,11 @@ hr{
   border-radius:50%;
 }
 .resume-list ul.flex li p{
+  display:block;
+  max-width:120px;
+  white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
-  display:-webkit-box;
-  -webkit-box-orient:vertical;
-  -webkit-line-clamp:1;
 }
 .resume-info{
   position:relative;
